@@ -4,10 +4,10 @@ import ImgScry
 
 usage = "usage: ImgScry [options] set_abbreviation\n" +\
         "options:\n" +\
-        " -f, --format\t Format output filenames with C-style string formatting.\n" +\
-        " -q, --quality\t Image download quality (small, normal, large). Default is normal" +\
-        " -s, --skip\t Attempt to skip files that have already been downloaded. Default is true" +\
-        " -l, --limit\t Do not download more than this number of cards. Default is no limit"
+        " -f, --format <string>\t Format output filenames with C-style string formatting.\n" +\
+        " -q, --quality <string>\t Image download quality (small, normal, large). Default is normal\n" +\
+        " -s, --skip <true/false>\t Attempt to skip files that have already been downloaded. Default is true\n" +\
+        " -l, --limit <number>\t Do not download more than this number of cards. Default is no limit"
 
 nameformat = "%s"
 def set_nameformat(s):
