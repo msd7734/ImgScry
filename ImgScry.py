@@ -18,7 +18,7 @@ def download_card(card, path, nameformat, quality, skip):
     downloaded = 0
     
     name = card["name"]
-    multiface = "card_faces" in card
+    multiface = "card_faces" in card and "image_uris" in card["card_faces"][0]
 
     if multiface:
         for face in card["card_faces"]:
