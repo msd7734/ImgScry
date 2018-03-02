@@ -3,8 +3,10 @@ import json
 import os
 import sys
 import time
+import re
 
 endpt_search = "https://api.scryfall.com/cards/search"
+bad_fname_pat = re.compile("[{0}]".format(re.escape('~#%&*{}\:<>?/+|\"')))
 
 delay = 0
 
@@ -26,7 +28,7 @@ def download_card(card, path, nameformat, quality, skip):
                          download_card(face, path, nameformat, quality, skip)
         return downloaded
 
-    filename = nameformat % name
+    filename = nameformat % bad_fname_pat.sub('', name)
     filepath = os.path.join(path, filename + ".jpg")
 
     if not os.path.exists(filepath) or not skip:
